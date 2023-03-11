@@ -1,0 +1,19 @@
+.media-player {
+  width: 100%;
+  height: auto;
+}
+/* 
+.media-player video {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .media-player video {
+    width: auto;
+    height: 100%;
+  }
+}
+*/

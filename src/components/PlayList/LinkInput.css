@@ -1,0 +1,40 @@
+@import "../../styles/variables.css";
+
+/* LinkInput */
+
+.link-input {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  background-color: var(--button-background-color);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  width: inherit;
+}
+
+.link-input input[type="text"] {
+  font-size: inherit;
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--button-text-color);
+  background-color: inherit;
+  width: 100%;
+  margin: 0 0.4rem;
+}
+
+.link-input input[type="text"]:focus {
+  outline: none;
+}
+
+.link-input .button {
+  margin-left: auto;
+  background-color: var(--background-color);
+}
+
+/* Warning Text */
+
+.warning-text {
+  color: #f00;
+  font-style: italic;
+  font-size: 0.8rem;
+}
