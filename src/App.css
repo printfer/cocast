@@ -1,0 +1,153 @@
+@import "./styles/variables.css";
+
+/* Main */
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--font-size);
+  font-family: "Open SansVariable", sans-serif;
+  font-variation-settings: "wght" 400;
+}
+
+/* Layout */
+
+.app-layout {
+  display: grid;
+  grid-template-columns: minmax(55vw, auto) 25rem;
+  grid-template-rows: auto;
+  gap: 1rem;
+  justify-content: center;
+  align-items: stretch;
+}
+.info-view {
+  grid-column: 1;
+  grid-row: 1;
+}
+.link-view {
+  grid-column: 2;
+  grid-row: 1;
+}
+.player-view {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+}
+.playlist-view {
+  grid-column: 2;
+  grid-row: 2;
+  height: 0; /* remove it from height calculation */
+  min-height: 100%; /* give it a min-height to match rows' height */
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.push {
+  margin-left: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+  .info-view {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .link-view {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .player-view {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .playlist-view {
+    grid-column: 1;
+    grid-row: 4;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app-layout {
+    grid-template-columns: 96vw;
+  }
+  .info-view {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .link-view {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .player-view {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .playlist-view {
+    grid-column: 1;
+    grid-row: 4;
+    height: auto;
+  }
+}
+
+/* Title */
+
+h1.app-title {
+  color: inherit;
+  text-decoration: none;
+  font-variation-settings: "wght" 800;
+  cursor: default;
+}
+h2 {
+  font-variation-settings: "wght" 700;
+}
+
+/* Button */
+
+.button {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding);
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--border-radius);
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.button .material-symbols {
+  font-size: 1.5rem;
+}
+
+/* Source Link && Git Icon */
+
+.source-link {
+  margin: 0 0.8rem;
+}
+
+.git-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url(assets/git-icon-1788c.svg) center / cover;
+  cursor: pointer;
+}
+@media (prefers-color-scheme: dark) {
+  .git-icon {
+    background: url(assets/git-icon-white.svg) center / cover;
+  }
+}

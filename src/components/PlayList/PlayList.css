@@ -1,0 +1,174 @@
+@import "../../styles/variables.css";
+
+/* PlayList */
+
+.playlist {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+
+  background-color: var(--button-background-color);
+  border-radius: var(--border-radius);
+
+  height: 100%;
+}
+
+/* PlayList Header */
+
+.playlist-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.playlist-header > h2 {
+  margin: 0;
+  padding-left: var(--padding);
+}
+
+.playlist-header .button {
+  margin-left: auto;
+}
+
+/* PlayList Content */
+
+.playlist-content {
+  display: flex;
+  flex-flow: column nowrap;
+
+  overflow-y: auto;
+  height: 100%;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+}
+
+.playlist-content .dragging {
+  border: 2px dashed grey;
+}
+
+.playlist-item {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  align-items: center;
+
+  padding: 0.5rem 0;
+  height: 3rem;
+
+  font-size: 0.9rem;
+
+  cursor: pointer;
+}
+
+.playlist-item:hover {
+  background-color: var(--button-hover-color);
+}
+
+.playlist-item.is-selected {
+  background-color: var(--button-hover-color);
+}
+
+.playlist-item-index {
+  display: flex;
+  justify-content: center;
+  font-family: "Fira Code", monospace;
+  font-size: 0.8rem;
+  width: 3em;
+}
+
+.playlist-item-info {
+  width: 100%;
+  overflow: hidden;
+}
+
+.playlist-item-info-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1em;
+  font-variation-settings: "wght" 500;
+}
+
+.playlist-item-info-link {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9em;
+}
+
+.playlist-item-delete {
+  margin-left: auto;
+  width: 3em;
+}
+
+.playlist-item-delete > button {
+  background-color: transparent;
+  color: transparent;
+
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.playlist-item-delete > button:hover {
+  color: inherit;
+}
+
+/* Touch screen */
+
+@media (hover: none) or (not (pointer: fine)) {
+  .playlist-item-delete {
+    /* disable playlist item delete function on touch screen */
+    pointer-events: none;
+  }
+}
+
+/* Separator */
+
+.separator {
+  margin: 1rem 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: grey;
+
+  cursor: default;
+  user-select: none;
+}
+
+.separator:after,
+.separator:before {
+  content: "";
+  display: block;
+  background: grey;
+  width: 30%;
+  height: 1px;
+  margin: 0 10px;
+}
+
+/* TODO:
+ * The following rules are designed to address long-standing bugs in the HTML5 drag and drop APIs, as documented in this issue:
+ * 1. https://bugs.webkit.org/show_bug.cgi?id=134555.
+ * These bugs have persisted for years and have resulted in many unsightly designs.
+ * Hopefully, future standards will prompt major browsers to rewrite their existing implementations, rendering the patch below unnecessary.
+ */
+
+.playlist-content .dragging > .playlist-item:hover {
+  background-color: inherit;
+}
+.playlist-content .dragging > .playlist-item.is-selected:hover {
+  background-color: var(--button-hover-color);
+}
+.playlist-content.on-drag .playlist-item.is-selected:hover {
+  background-color: var(--button-hover-color);
+}
+.playlist-content.on-drag .playlist-item:hover {
+  background-color: inherit;
+}

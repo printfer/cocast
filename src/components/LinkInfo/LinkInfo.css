@@ -1,0 +1,77 @@
+@import "../../styles/variables.css";
+
+.link-info {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Clipboard Copy */
+
+.clipboard-copy {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  background-color: var(--button-background-color);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  width: inherit;
+}
+
+.clipboard-copy input[type="text"] {
+  font-size: inherit;
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--button-text-color);
+  background-color: inherit;
+  width: 100%;
+  margin: 0 0.4rem;
+}
+
+.clipboard-copy input[type="text"]:focus {
+  outline: none;
+}
+
+.clipboard-copy .button {
+  margin-left: auto;
+  background-color: var(--background-color);
+}
+
+/* QRCode Component */
+
+.qrcode-component {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+/* Loading */
+
+.loading {
+  cursor: default;
+}
+
+.loading:after {
+  content: " .";
+  animation: dots 2s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0.3em 0 0 rgba(0, 0, 0, 0), 0.6em 0 0 rgba(0, 0, 0, 0);
+  }
+  40% {
+    color: white;
+    text-shadow: 0.3em 0 0 rgba(0, 0, 0, 0), 0.6em 0 0 rgba(0, 0, 0, 0);
+  }
+  60% {
+    text-shadow: 0.3em 0 0 white, 0.6em 0 0 rgba(0, 0, 0, 0);
+  }
+  80%,
+  100% {
+    text-shadow: 0.3em 0 0 white, 0.6em 0 0 white;
+  }
+}

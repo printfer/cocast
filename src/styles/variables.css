@@ -1,0 +1,29 @@
+:root {
+  /* global */
+  --background-color: #fff;
+  --text-color: #000;
+  --font-size: 16px;
+  --border-radius: 12px;
+  --padding: 12px;
+  /* button */
+  --button-background-color: #f2f2f2;
+  --button-hover-color: #0000001a;
+  --button-text-color: #030303;
+  /* modal */
+  --modal-color: #ffffff;
+  --modal-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* global */
+    --background-color: #0f0f0f;
+    --text-color: #f1f1f1;
+    /* button */
+    --button-background-color: #272727;
+    --button-hover-color: #fff3;
+    --button-text-color: #f1f1f1;
+    /* modal */
+    --modal-color: #212121;
+  }
+}
